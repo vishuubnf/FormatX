@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormatX</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('a.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 50, 150, 0.6);
+            backdrop-filter: blur(10px);
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: white;
+        }
+
+        .container {
+            background: rgba(0, 50, 150, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            width: 350px;
+            margin-top: 100px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            width: 90%;
+            background: white;
+            color: black;
+        }
+
+        select,
+        button {
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            width: 100%;
+            background: white;
+            color: black;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            position: absolute;
+            bottom: 0;
+            background: black;
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">FormatX</div>
+    <div class="container">
+        <h2>Convert Your Files</h2>
+        <input type="file" id="fileInput">
+
+        <label for="fromFormat">From:</label>
+        <select id="fromFormat">
+            <option value="auto">Auto Detect</option>
+            <optgroup label="Documents">
+                <option value="pdf">PDF</option>
+                <option value="docx">DOCX</option>
+                <option value="txt">TXT</option>
+                <option value="odt">ODT</option>
+                <option value="rtf">RTF</option>
+                <option value="xls">XLS</option>
+                <option value="xlsx">XLSX</option>
+            </optgroup>
+            <optgroup label="Images">
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="svg">SVG</option>
+                <option value="gif">GIF</option>
+                <option value="bmp">BMP</option>
+                <option value="webp">WEBP</option>
+            </optgroup>
+            <optgroup label="Videos">
+                <option value="mp4">MP4</option>
+                <option value="avi">AVI</option>
+                <option value="mkv">MKV</option>
+                <option value="mov">MOV</option>
+                <option value="wmv">WMV</option>
+            </optgroup>
+            <optgroup label="Audio">
+                <option value="mp3">MP3</option>
+                <option value="wav">WAV</option>
+                <option value="aac">AAC</option>
+                <option value="ogg">OGG</option>
+            </optgroup>
+            <optgroup label="E-books">
+                <option value="epub">EPUB</option>
+                <option value="mobi">MOBI</option>
+                <option value="azw">AZW</option>
+            </optgroup>
+            <optgroup label="Compressed">
+                <option value="zip">ZIP</option>
+                <option value="7z">7Z</option>
+                <option value="rar">RAR</option>
+            </optgroup>
+        </select>
+
+        <label for="toFormat">To:</label>
+        <select id="toFormat">
+            <optgroup label="Documents">
+                <option value="pdf">PDF</option>
+                <option value="docx">DOCX</option>
+                <option value="txt">TXT</option>
+                <option value="odt">ODT</option>
+                <option value="rtf">RTF</option>
+                <option value="xls">XLS</option>
+                <option value="xlsx">XLSX</option>
+            </optgroup>
+            <optgroup label="Images">
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="svg">SVG</option>
+                <option value="gif">GIF</option>
+                <option value="bmp">BMP</option>
+                <option value="webp">WEBP</option>
+            </optgroup>
+            <optgroup label="Videos">
+                <option value="mp4">MP4</option>
+                <option value="avi">AVI</option>
+                <option value="mkv">MKV</option>
+                <option value="mov">MOV</option>
+                <option value="wmv">WMV</option>
+            </optgroup>
+            <optgroup label="Audio">
+                <option value="mp3">MP3</option>
+                <option value="wav">WAV</option>
+                <option value="aac">AAC</option>
+                <option value="ogg">OGG</option>
+            </optgroup>
+            <optgroup label="E-books">
+                <option value="epub">EPUB</option>
+                <option value="mobi">MOBI</option>
+                <option value="azw">AZW</option>
+            </optgroup>
+            <optgroup label="Compressed">
+                <option value="zip">ZIP</option>
+                <option value="7z">7Z</option>
+                <option value="rar">RAR</option>
+            </optgroup>
+        </select>
+
+        <button onclick="convertFile()">Convert</button>
+        <p id="status"></p>
+    </div>
+    <div class="footer">FormatX by ❤️</div>
+
+    <script>
+        async function convertFile() {
+            const fileInput = document.getElementById('fileInput');
+            const toFormat = document.getElementById('toFormat').value;
+            const statusElement = document.getElementById('status');
+
+            if (!fileInput.files.length) {
+                statusElement.innerText = "Please select a file.";
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append("source_file", file);
+            formData.append("target_format", toFormat);
+
+            statusElement.innerText = "Uploading file...";
+
+            try {
+                const response = await fetch("https://api.zamzar.com/v1/jobs", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": "Basic " + btoa("a282a888899841deec757e27ad2bf6f9cb5bd5e7" + ":")
+                    },
+                    body: formData
+                });
+
+
+                const data = await response.json();
+                if (response.ok) {
+                    checkConversionStatus(data.id);
+                } else {
+                    statusElement.innerText = "Error: " + data.message;
+                }
+            } catch (error) {
+                statusElement.innerText = "Error: " + error.message;
+            }
+        }
+    </script>
+</body>
+
+</html>
