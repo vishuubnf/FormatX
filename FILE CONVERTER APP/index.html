@@ -226,10 +226,10 @@
             statusElement.innerText = "Uploading file...";
 
             try {
-                const response = await fetch("https://api.zamzar.com/v1/jobs", {
+                const response = await fetch("YOUR_API_PROVIDER", {
                     method: "POST",
                     headers: {
-                        "Authorization": "Basic " + btoa("a282a888899841deec757e27ad2bf6f9cb5bd5e7" + ":")
+                        "Authorization": "Basic " + btoa("YOUR_API_ID" + ":")
                     },
                     body: formData
                 });
